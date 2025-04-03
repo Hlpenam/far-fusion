@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Servicios - Far Fusion">
+	<main class="pt-24">
+		<!-- Hero Section -->
+		<section class="relative h-[60vh] bg-gradient-to-r from-blue-900 to-blue-700">
+			<div class="absolute inset-0">
+				<img src="/images/servicios/hero-servicios.jpg" alt="Servicios médicos" class="w-full h-full object-cover opacity-20">
+			</div>
+			<div class="relative container mx-auto px-4 h-full flex items-center">
+				<div class="text-white max-w-3xl">
+					<h1 class="text-5xl font-bold mb-4">Nuestros Servicios</h1>
+					<p class="text-xl">Ofrecemos servicios especializados de evaluación y certificación con los más altos estándares de calidad.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Servicios Grid -->
+		<section class="py-20 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<!-- Examen Para La Licencia De Conducción -->
+					<div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105">
+						<img src="/images/servicios/licencia-conduccion.jpg" alt="Examen de conducción" class="w-full h-64 object-cover">
+						<div class="p-6">
+							<h3 class="text-2xl font-bold text-gray-900 mb-4">Examen Para La Licencia De Conducción</h3>
+							<p class="text-gray-600 mb-4">Son pruebas de aptitud que miden la capacidad física mental y de coordinación motriz de una persona de manera objetiva para la conducción.</p>
+							<a href="/servicios/licencia-conduccion" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+								Más información
+							</a>
+						</div>
+					</div>
+
+					<!-- Examen Escolar -->
+					<div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105">
+						<img src="/images/servicios/examen-escolar.jpg" alt="Examen escolar" class="w-full h-64 object-cover">
+						<div class="p-6">
+							<h3 class="text-2xl font-bold text-gray-900 mb-4">Examen Escolar</h3>
+							<p class="text-gray-600 mb-4">Evaluaciones integrales para estudiantes, garantizando su bienestar y óptimo desarrollo académico.</p>
+							<a href="/servicios/examen-escolar" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+								Más información
+							</a>
+						</div>
+					</div>
+
+					<!-- Consulta Externa -->
+					<div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105">
+						<img src="/images/servicios/consulta-externa.jpg" alt="Consulta externa" class="w-full h-64 object-cover">
+						<div class="p-6">
+							<h3 class="text-2xl font-bold text-gray-900 mb-4">Consulta Externa</h3>
+							<p class="text-gray-600 mb-4">Servicios médicos especializados para el diagnóstico, tratamiento y seguimiento de diversas condiciones de salud.</p>
+							<a href="/servicios/consulta-externa" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+								Más información
+							</a>
+						</div>
+					</div>
+
+					<!-- Seguridad Vial -->
+					<div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105">
+						<img src="/images/servicios/seguridad-vial.jpg" alt="Seguridad vial" class="w-full h-64 object-cover">
+						<div class="p-6">
+							<h3 class="text-2xl font-bold text-gray-900 mb-4">Seguridad Vial</h3>
+							<p class="text-gray-600 mb-4">Programas y evaluaciones enfocados en promover la seguridad vial y prevenir accidentes de tránsito.</p>
+							<a href="/servicios/seguridad-vial" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+								Más información
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-16 bg-blue-900 text-white">
+			<div class="container mx-auto px-4 text-center">
+				<h2 class="text-3xl font-bold mb-4">¿Necesitas más información?</h2>
+				<p class="text-xl mb-8">Nuestro equipo está listo para atender todas tus consultas</p>
+				<a href="/contacto" class="inline-block bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+					Contáctanos
+				</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.hover\:scale-105:hover {
+		transform: scale(1.05);
+	}
+</style> 

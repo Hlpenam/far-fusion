@@ -1,0 +1,214 @@
+/* Variables de tema */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --accent-primary: #2563eb;
+  --accent-secondary: #1d4ed8;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --accent-primary-rgb: 37, 99, 235;
+  --accent-secondary-rgb: 29, 78, 216;
+}
+
+:root.dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #2563eb;
+  --card-bg: #1f2937;
+  --card-border: #374151;
+  --accent-primary-rgb: 59, 130, 246;
+  --accent-secondary-rgb: 37, 99, 235;
+}
+
+/* Estilos generales */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-gradient {
+  background: var(--body-bg);
+  color: var(--body-text);
+}
+
+.service-card {
+  @apply p-4 sm:p-6 rounded-lg shadow-sm;
+  transition: all 0.3s ease;
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
+}
+
+.icon-container {
+  @apply w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-4 sm:mb-6;
+  background-color: var(--accent-color);
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  color: var(--bg-primary);
+}
+
+.service-card:hover .icon-container {
+  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+}
+
+.service-card:hover .icon-container svg {
+  color: var(--accent-color);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Estilos para el texto */
+.gradient-text {
+  color: var(--body-text);
+}
+
+/* Estilos para secciones */
+.section-padding {
+  @apply py-8 sm:py-12 lg:py-16;
+}
+
+.section-bg {
+  background-color: var(--bg-secondary);
+}
+
+/* Estilos para botones */
+.btn-primary {
+  @apply px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-medium;
+  background-color: var(--accent-color);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Estilos para las cards */
+.feature-card {
+  @apply p-4 sm:p-6 rounded-lg;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para el hero */
+.hero-content {
+  @apply relative z-10 px-4 sm:px-6 lg:px-8;
+}
+
+.hero-bg {
+  @apply absolute inset-0;
+  background: linear-gradient(135deg, rgba(var(--accent-secondary-rgb), 0.9) 0%, rgba(var(--accent-primary-rgb), 0.9) 100%);
+}
+
+/* Estilos para el grid de servicios */
+.services-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+}
+
+/* Estilos para el contenedor de servicios */
+.services-container {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Estilos para los títulos de sección */
+.section-title {
+  @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12;
+}
+
+/* Estilos para las descripciones */
+.service-description {
+  @apply text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300;
+}
+
+/* Estilos para el botón de tema */
+.theme-toggle {
+  @apply fixed bottom-4 right-4 sm:bottom-8 sm:right-8;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 0.75rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 50;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle svg {
+  @apply w-5 h-5 sm:w-6 sm:h-6;
+  color: var(--text-primary);
+}
+
+/* Estilos para el menú móvil */
+.mobile-menu {
+  @apply fixed inset-0 bg-white dark:bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out;
+}
+
+.mobile-menu.hidden {
+  transform: translateX(100%);
+}
+
+/* Estilos para imágenes */
+.service-image {
+  @apply w-full h-48 sm:h-64 lg:h-72 object-cover rounded-lg mb-4 sm:mb-6;
+}
+
+/* Estilos para el contenido de la tarjeta */
+.service-content {
+  @apply space-y-2 sm:space-y-3;
+}
+
+/* Estilos para el título de la tarjeta */
+.service-title {
+  @apply text-lg sm:text-xl lg:text-2xl font-semibold;
+}
+
+/* Estilos para el texto de la tarjeta */
+.service-text {
+  @apply text-sm sm:text-base text-gray-600 dark:text-gray-300;
+}
+
+/* Ajustes para modo oscuro */
+:root.dark .service-card {
+  background-color: var(--body-bg);
+  color: var(--body-text);
+  border-color: var(--accent-color);
+}
+
+:root.dark .icon-container svg {
+  color: var(--accent-color);
+}
+
+:root.dark .gradient-text {
+  color: var(--body-text);
+} 

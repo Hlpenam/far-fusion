@@ -1,0 +1,39 @@
+---
+const services = [
+  {
+    title: 'Desarrollo Web',
+    description: 'Creamos sitios web modernos y responsivos que destacan tu marca.',
+    icon: '🌐'
+  },
+  {
+    title: 'Aplicaciones Móviles',
+    description: 'Desarrollamos aplicaciones móviles nativas y multiplataforma.',
+    icon: '📱'
+  },
+  {
+    title: 'Cloud Computing',
+    description: 'Soluciones en la nube escalables y seguras para tu negocio.',
+    icon: '☁️'
+  },
+  {
+    title: 'Consultoría IT',
+    description: 'Asesoramiento experto para optimizar tu infraestructura tecnológica.',
+    icon: '💡'
+  }
+];
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Nuestros Servicios</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map(service => (
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">{service.icon}</div>
+          <h3 class="text-xl font-semibold mb-2">{service.title}</h3>
+          <p class="text-gray-600">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 

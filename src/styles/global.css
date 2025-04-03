@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Tema claro */
+  --header-bg: #0B1120;
+  --header-text: #FFE000;
+  --body-bg: #FFFFFF;
+  --body-text: #1E293B;
+  --footer-bg: #0B1120;
+  --footer-text: #FFE000;
+  --accent-color: #0EA5E9;
+}
+
+/* Tema oscuro */
+:root.dark {
+  --header-bg: #FFFFFF;
+  --header-text: #0B1120;
+  --body-bg: #0B1120;
+  --body-text: #FFE000;
+  --footer-bg: #FFFFFF;
+  --footer-text: #0B1120;
+  --accent-color: #0EA5E9;
+}
+
+@layer base {
+  html {
+    @apply min-h-screen;
+    background-color: var(--body-bg);
+    color: var(--body-text);
+  }
+
+  body {
+    @apply min-h-screen;
+    background-color: var(--body-bg);
+    color: var(--body-text);
+  }
+
+  main {
+    @apply min-h-screen;
+    background-color: var(--body-bg);
+    color: var(--body-text);
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-12 sm:py-16 lg:py-20 relative;
+    background-color: var(--body-bg);
+  }
+
+  .card {
+    @apply p-6 rounded-lg border transition-all duration-300;
+    background-color: var(--body-bg);
+    color: var(--body-text);
+  }
+
+  .service-card {
+    @apply p-6 rounded-lg border transition-all duration-300;
+    background-color: var(--body-bg);
+    color: var(--body-text);
+  }
+
+  .service-card-title {
+    @apply text-xl font-bold mb-4 relative after:content-[''] 
+           after:absolute after:bottom-0 after:left-0 after:w-16 
+           after:h-0.5 pb-2;
+  }
+
+  .service-card-description {
+    @apply leading-relaxed;
+  }
+
+  .nav-link {
+    color: var(--header-text);
+    @apply hover:opacity-80 transition-colors duration-200;
+  }
+
+  .glow-on-hover {
+    @apply relative overflow-hidden;
+  }
+
+  .glow-on-hover::before {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 224, 0, 0.2) 50%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    animation: glow 2s infinite;
+  }
+}
+
+/* Estilos base */
+header {
+  background-color: var(--header-bg) !important;
+  color: var(--header-text) !important;
+}
+
+body {
+  background-color: var(--body-bg) !important;
+  color: var(--body-text) !important;
+}
+
+footer {
+  background-color: var(--footer-bg) !important;
+  color: var(--footer-text) !important;
+}
+
+/* Transiciones */
+header,
+body,
+footer,
+.nav-link,
+.card,
+.service-card {
+  @apply transition-all duration-300;
+}
+
+@keyframes glow {
+  100% {
+    transform: translateX(100%);
+  }
+} 

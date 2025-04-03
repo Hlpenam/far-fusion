@@ -1,0 +1,50 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="theme-footer w-full py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <h3 class="text-xl font-bold theme-text">ATENTO IPS</h3>
+        <p class="mt-2 theme-text">Cuidando tu salud con excelencia</p>
+      </div>
+      
+      <div class="flex flex-col md:flex-row gap-8">
+        <div>
+          <h4 class="font-semibold mb-2 theme-text">Contacto</h4>
+          <p class="theme-text">Email: contacto@atentoips.com</p>
+          <p class="theme-text">Tel: (123) 456-7890</p>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-2 theme-text">Síguenos</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="theme-text hover:opacity-80">Facebook</a>
+            <a href="#" class="theme-text hover:opacity-80">Twitter</a>
+            <a href="#" class="theme-text hover:opacity-80">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-8 text-center">
+      <p class="theme-text">&copy; {currentYear} ATENTO IPS. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .theme-footer {
+    background-color: var(--footer-bg) !important;
+    color: var(--footer-text) !important;
+  }
+
+  .theme-text {
+    color: var(--footer-text) !important;
+  }
+
+  a.theme-text:hover {
+    opacity: 0.8;
+  }
+</style> 
