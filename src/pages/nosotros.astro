@@ -2,82 +2,87 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Quiénes somos - ATENTO IPS">
-	<main class="pt-24">
-		<section class="bg-white py-16">
-			<div class="container mx-auto px-4">
-				<h1 class="text-4xl font-bold text-gray-900 mb-12 text-center">Quiénes somos</h1>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-					<div class="bg-blue-50 p-8 rounded-lg">
-						<h2 class="text-2xl font-bold text-gray-900 mb-4">Misión</h2>
-						<p class="text-gray-600">
-							Prestar servicios de evaluación psicosensométrica que cumplan las normas legales vigentes, utilizando equipos de última tecnología que permitan garantizar la satisfacción de los clientes.
+<Layout title="Sobre Nosotros - ATENTO IPS">
+	<main class="container mx-auto px-4 py-12">
+		<section class="max-w-4xl mx-auto">
+			<h1 class="text-4xl font-bold mb-8 text-center gradient-text">Sobre Nosotros</h1>
+			
+			<div class="space-y-8">
+				<!-- Misión y Visión -->
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+						<h2 class="text-2xl font-semibold mb-4">Nuestra Misión</h2>
+						<p class="text-gray-600 dark:text-gray-300">
+							Brindar servicios de salud de alta calidad, accesibles y centrados en el paciente, 
+							promoviendo el bienestar y la prevención de enfermedades en nuestra comunidad.
 						</p>
 					</div>
 					
-					<div class="bg-blue-50 p-8 rounded-lg">
-						<h2 class="text-2xl font-bold text-gray-900 mb-4">Visión</h2>
-						<p class="text-gray-600">
-							Atento I.P.S, para el 2011 proyecta un mínimo de 7200 exámenes psicosensometricos cumpliendo siempre con los postulados de calidad, honestidad y profesionalismo de todos y cada uno de los que conforman el grupo humano.
+					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+						<h2 class="text-2xl font-semibold mb-4">Nuestra Visión</h2>
+						<p class="text-gray-600 dark:text-gray-300">
+							Ser reconocidos como líderes en la prestación de servicios de salud integrales, 
+							innovadores y humanizados, contribuyendo al desarrollo de una sociedad más saludable.
 						</p>
 					</div>
 				</div>
-
-				<div class="mb-16">
-					<h2 class="text-3xl font-bold text-gray-900 mb-6">Nuestra historia</h2>
-					<div class="prose max-w-none">
-						<p class="text-gray-600 mb-4">
-							El "Centro de reconocimiento de conductores Atento i.p.s Ltda.." es una empresa privada constituida oficialmente el 19 de julio de 2006, según matricula 0161737 de cámara de comercio.
-						</p>
-						<p class="text-gray-600 mb-4">
-							Su organización se implementó para cumplir los ordenamientos legales para efectuar los exámenes médico – Psicosensométricos y expedir el "Certificado de aptitud física, mental y de coordinación motriz" para la expedición inicial, refrendación o recategorización de la licencia de conducción.
-						</p>
-						<p class="text-gray-600 mb-4">
-							Después de sortear múltiples dificultades debido en parte a ser un proceso innovador sin antecedentes en Colombia, se logró cumplir con los estándares de calidad exigidos y reglamentados por el Ministerio de Transporte en la NTC ISO 9000:2000 y las resoluciones NTC ISO/IEC 17024 de 2003 y 1555 de 2005.
-						</p>
-						<p class="text-gray-600">
-							Fue así, como el Ministerio de Transporte en Resolución 000029/2006 del 12 de enero de 2007 autorizo el funcionamiento del Centro de reconocimiento de conductores Atento I.P.S Ltda. El día 15 de enero de 2007 este abrió sus puertas al público con una dotación locativa, tecnológica y humana de excelentes calidades cualidades para prestar un servicio que sea orgullo para sus socios y un apoyo importante para el Ministerio de Transporte en su afán de depurar los vicios de vieja data que utilizaban para la expedición de la licencia de conducción.
-						</p>
+				
+				<!-- Valores -->
+				<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+					<h2 class="text-2xl font-semibold mb-4">Nuestros Valores</h2>
+					<div class="grid md:grid-cols-3 gap-6">
+						<div class="text-center">
+							<div class="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
+								<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+								</svg>
+							</div>
+							<h3 class="font-semibold mb-2">Calidad</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">
+								Comprometidos con la excelencia en cada servicio que ofrecemos
+							</p>
+						</div>
+						
+						<div class="text-center">
+							<div class="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
+								<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+								</svg>
+							</div>
+							<h3 class="font-semibold mb-2">Humanización</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">
+								Atención personalizada y empática con cada paciente
+							</p>
+						</div>
+						
+						<div class="text-center">
+							<div class="w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
+								<svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+								</svg>
+							</div>
+							<h3 class="font-semibold mb-2">Innovación</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">
+								Implementación de tecnologías y metodologías de vanguardia
+							</p>
+						</div>
 					</div>
 				</div>
-
-				<div class="mb-16">
-					<h2 class="text-3xl font-bold text-gray-900 mb-6">Personal Atento IPS</h2>
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-						<img src="/images/nosotros/personal-1.jpg" alt="Cliente realizando el examen médico para la licencia de conducción" class="w-full h-auto rounded-lg shadow-lg" />
-						<img src="/images/nosotros/personal-2.jpg" alt="Cliente realizando el examen médico para la licencia de conducción" class="w-full h-auto rounded-lg shadow-lg" />
-					</div>
-				</div>
-
-				<div class="bg-gray-50 p-8 rounded-lg">
-					<h2 class="text-3xl font-bold text-gray-900 mb-6">Cumplimiento normativo de la entidad</h2>
-					<ul class="space-y-4 text-gray-600">
-						<li class="flex items-center">
-							<svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-							</svg>
-							Damos cumplimiento a las exigencias del Fondo Nacional de Seguridad Vial.
-						</li>
-						<li class="flex items-center">
-							<svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-							</svg>
-							Habilitados por la secretaria de salud.
-						</li>
-						<li class="flex items-center">
-							<svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-							</svg>
-							Habilitados por el ministerio de transporte.
-						</li>
-						<li class="flex items-center">
-							<svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-							</svg>
-							Acreditados por ONAC
-						</li>
-					</ul>
+				
+				<!-- Historia -->
+				<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+					<h2 class="text-2xl font-semibold mb-4">Nuestra Historia</h2>
+					<p class="text-gray-600 dark:text-gray-300 mb-4">
+						ATENTO IPS nació en 2020 con el propósito de transformar la atención en salud en Colombia. 
+						Desde nuestros inicios, nos hemos enfocado en brindar servicios médicos de calidad, 
+						accesibles y centrados en el paciente.
+					</p>
+					<p class="text-gray-600 dark:text-gray-300">
+						A lo largo de los años, hemos crecido y evolucionado, incorporando nuevas tecnologías 
+						y expandiendo nuestra gama de servicios para satisfacer las necesidades cambiantes 
+						de nuestra comunidad. Hoy, somos un referente en la prestación de servicios de salud 
+						integrales y de calidad.
+					</p>
 				</div>
 			</div>
 		</section>

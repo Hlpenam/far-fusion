@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import WhatsAppChat from '../components/WhatsAppChat.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -20,12 +21,13 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="min-h-screen bg-body-bg text-body-text transition-colors duration-300">
 		<Header />
 		<main>
 			<slot />
 		</main>
 		<Footer />
+		<WhatsAppChat />
 
 		<!-- WhatsApp Flotante -->
 		<a href="https://wa.me/573203442624" 

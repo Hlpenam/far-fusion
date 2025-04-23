@@ -3,78 +3,102 @@
 @tailwind utilities;
 
 :root {
-  /* Tema claro */
+  /* Colores modo claro */
   --header-bg: #0B1120;
   --header-text: #FFE000;
   --body-bg: #FFFFFF;
   --body-text: #1E293B;
+  --accent-color: #0EA5E9;
+  --accent-hover: #0284C7;
+  --card-bg: #F8FAFC;
+  --card-border: #E2E8F0;
   --footer-bg: #0B1120;
   --footer-text: #FFE000;
-  --accent-color: #0EA5E9;
 }
 
-/* Tema oscuro */
 :root.dark {
+  /* Colores modo oscuro */
   --header-bg: #FFFFFF;
   --header-text: #0B1120;
   --body-bg: #0B1120;
-  --body-text: #FFE000;
+  --body-text: #E2E8F0;
+  --accent-color: #38BDF8;
+  --accent-hover: #0EA5E9;
+  --card-bg: #1E293B;
+  --card-border: #334155;
   --footer-bg: #FFFFFF;
   --footer-text: #0B1120;
-  --accent-color: #0EA5E9;
 }
 
 @layer base {
   html {
-    @apply min-h-screen;
+    @apply scroll-smooth;
     background-color: var(--body-bg);
     color: var(--body-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
-    @apply min-h-screen;
+    @apply font-sans antialiased;
     background-color: var(--body-bg);
     color: var(--body-text);
   }
 
-  main {
-    @apply min-h-screen;
-    background-color: var(--body-bg);
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
     color: var(--body-text);
+  }
+
+  a {
+    @apply transition-colors duration-200;
+    color: var(--accent-color);
+  }
+
+  a:hover {
+    color: var(--accent-hover);
   }
 }
 
 @layer components {
   .section {
-    @apply py-12 sm:py-16 lg:py-20 relative;
+    @apply py-16 px-4;
     background-color: var(--body-bg);
   }
 
   .card {
-    @apply p-6 rounded-lg border transition-all duration-300;
-    background-color: var(--body-bg);
-    color: var(--body-text);
+    @apply rounded-lg p-6 shadow-lg transition-all duration-300;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+  }
+
+  .card:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
   }
 
   .service-card {
-    @apply p-6 rounded-lg border transition-all duration-300;
-    background-color: var(--body-bg);
-    color: var(--body-text);
-  }
-
-  .service-card-title {
-    @apply text-xl font-bold mb-4 relative after:content-[''] 
-           after:absolute after:bottom-0 after:left-0 after:w-16 
-           after:h-0.5 pb-2;
-  }
-
-  .service-card-description {
-    @apply leading-relaxed;
+    @apply card flex flex-col items-center text-center;
   }
 
   .nav-link {
+    @apply px-4 py-2 rounded-md transition-colors duration-200;
     color: var(--header-text);
-    @apply hover:opacity-80 transition-colors duration-200;
+  }
+
+  .nav-link:hover {
+    @apply bg-opacity-10;
+    background-color: var(--header-text);
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background-color: var(--accent-color);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
   }
 
   .glow-on-hover {
@@ -83,15 +107,29 @@
 
   .glow-on-hover::before {
     content: '';
-    @apply absolute inset-0;
-    background: linear-gradient(90deg, 
-      transparent 0%, 
-      rgba(255, 224, 0, 0.2) 50%,
-      transparent 100%
-    );
-    transform: translateX(-100%);
-    animation: glow 2s infinite;
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-hover));
   }
+
+  .glow-on-hover:hover::before {
+    @apply opacity-20;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 /* Estilos base */
