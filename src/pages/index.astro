@@ -1,58 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="ATENTO IPS - Centro de Reconocimiento de Conductores">
-	<section class="hero py-20">
-		<div class="container mx-auto px-4">
-			<div class="max-w-3xl">
-				<h1 class="text-4xl md:text-6xl font-bold mb-6">
-					Examen médico para la licencia de conducción
-				</h1>
-				<p class="text-xl mb-8">
-					Somos un Centro de Reconocimiento de Conductores prestador de servicios en salud,
-					enfocado en los exámenes psicosensométricos para la expedición de las licencias de conducción.
-				</p>
-				<div class="flex gap-4">
-					<a href="/agendar" class="btn btn-primary">
-						Agendar Cita
-					</a>
-					<a href="/servicios" class="btn btn-outline">
-						Ver Servicios
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="services py-16">
-		<div class="container mx-auto px-4">
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-				<div class="service-card p-6 rounded-lg shadow-md">
-					<h3 class="text-xl font-bold mb-4">Examen para la licencia de conducción</h3>
-					<a href="/servicios/licencia" class="text-accent-color hover:underline">Ver más →</a>
-				</div>
-
-				<div class="service-card p-6 rounded-lg shadow-md">
-					<h3 class="text-xl font-bold mb-4">Seguridad vial</h3>
-					<a href="/servicios/seguridad-vial" class="text-accent-color hover:underline">Ver más →</a>
-				</div>
-
-				<div class="service-card p-6 rounded-lg shadow-md">
-					<h3 class="text-xl font-bold mb-4">Examen médico</h3>
-					<a href="/servicios/examen-medico" class="text-accent-color hover:underline">Ver más →</a>
-				</div>
-
-				<div class="service-card p-6 rounded-lg shadow-md">
-					<h3 class="text-xl font-bold mb-4">Examen escolar</h3>
-					<a href="/servicios/examen-escolar" class="text-accent-color hover:underline">Ver más →</a>
-				</div>
-			</div>
-		</div>
-	</section>
+<Layout 
+	title="ATENTO IPS - Exámenes Médicos y Seguridad Vial"
+	description="Centro especializado en exámenes médicos para licencias de conducción, seguridad vial y exámenes escolares. Profesionales certificados y tecnología de última generación."
+	canonicalUrl="https://atentoips.com"
+	ogImage="/images/og-image.webp"
+>
+	<HeroCarousel />
 </Layout>
 
 <style>
@@ -62,8 +22,8 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.service-card {
-		background-color: var(--body-bg);
-		border: 1px solid rgba(var(--body-text), 0.1);
+		background-color: var(--card-bg);
+		border: 1px solid var(--card-border);
 	}
 
 	.text-accent-color {

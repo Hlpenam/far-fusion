@@ -6,22 +6,51 @@ import '../styles/global.css';
 
 interface Props {
 	title: string;
+	description?: string;
+	canonicalUrl?: string;
+	ogImage?: string;
 }
 
-const { title } = Astro.props;
+const {
+	title,
+	description = "ATENTO IPS - Centro especializado en exámenes médicos para licencias de conducción, seguridad vial y exámenes escolares. Profesionales certificados y tecnología de última generación.",
+	canonicalUrl,
+	ogImage = "/images/og-image.webp"
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="ATENTO IPS" />
+		<meta name="keywords" content="exámenes médicos, licencia de conducción, seguridad vial, exámenes escolares, IPS, medicina laboral" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalUrl || Astro.url.href} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalUrl || Astro.url.href} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={ogImage} />
+		
+		<!-- Canonical URL -->
+		{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+		
 		<title>{title}</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/styles/global.css" />
 	</head>
-	<body class="min-h-screen bg-body-bg text-body-text transition-colors duration-300">
+	<body class="min-h-screen bg-body-bg text-body-text">
 		<Header />
 		<main>
 			<slot />
@@ -44,24 +73,12 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
-		/* Tema claro */
 		--header-bg: #0B1120;
 		--header-text: #FFE000;
 		--body-bg: #FFFFFF;
 		--body-text: #1E293B;
 		--footer-bg: #0B1120;
 		--footer-text: #FFE000;
-		--accent-color: #0EA5E9;
-	}
-
-	/* Tema oscuro */
-	:root.dark {
-		--header-bg: #FFFFFF;
-		--header-text: #0B1120;
-		--body-bg: #0B1120;
-		--body-text: #FFE000;
-		--footer-bg: #FFFFFF;
-		--footer-text: #0B1120;
 		--accent-color: #0EA5E9;
 	}
 
@@ -78,7 +95,6 @@ const { title } = Astro.props;
 		background-color: var(--body-bg);
 		color: var(--body-text);
 		min-height: calc(100vh - 64px);
-		padding-top: 64px;
 	}
 
 	/* Estilos del header */
@@ -149,11 +165,3 @@ const { title } = Astro.props;
 		transform: translateY(-1px);
 	}
 </style>
-
-<script is:inline>
-	// Inicializar tema
-	const theme = localStorage.getItem('theme') || 
-		(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-	
-	document.documentElement.classList.toggle('dark', theme === 'dark');
-</script>

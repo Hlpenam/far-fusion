@@ -3,31 +3,17 @@
 @tailwind utilities;
 
 :root {
-  /* Colores modo claro */
+  /* Colores base */
   --header-bg: #0B1120;
   --header-text: #FFE000;
-  --body-bg: #FFFFFF;
-  --body-text: #1E293B;
-  --accent-color: #0EA5E9;
-  --accent-hover: #0284C7;
-  --card-bg: #F8FAFC;
-  --card-border: #E2E8F0;
-  --footer-bg: #0B1120;
-  --footer-text: #FFE000;
-}
-
-:root.dark {
-  /* Colores modo oscuro */
-  --header-bg: #FFFFFF;
-  --header-text: #0B1120;
   --body-bg: #0B1120;
-  --body-text: #E2E8F0;
-  --accent-color: #38BDF8;
-  --accent-hover: #0EA5E9;
+  --body-text: #FFFFFF;
+  --accent-color: #FFE000;
+  --accent-hover: #FFD700;
   --card-bg: #1E293B;
   --card-border: #334155;
-  --footer-bg: #FFFFFF;
-  --footer-text: #0B1120;
+  --footer-bg: #0B1120;
+  --footer-text: #FFE000;
 }
 
 @layer base {
@@ -73,7 +59,7 @@
 
   .card:hover {
     @apply transform -translate-y-1;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
   }
 
   .service-card {
@@ -88,12 +74,13 @@
   .nav-link:hover {
     @apply bg-opacity-10;
     background-color: var(--header-text);
+    color: var(--header-bg);
   }
 
   .btn-primary {
     @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
     background-color: var(--accent-color);
-    color: white;
+    color: var(--body-bg);
   }
 
   .btn-primary:hover {

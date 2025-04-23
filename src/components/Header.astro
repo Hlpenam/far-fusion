@@ -1,6 +1,4 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
-
 const menuItems = [
   { text: 'Inicio', href: '/' },
   { text: 'Quiénes somos', href: '/nosotros' },
@@ -10,13 +8,21 @@ const menuItems = [
 ---
 
 <header class="fixed w-full shadow-lg z-50">
-  <nav class="container mx-auto px-4 py-4">
-    <div class="flex justify-between items-center">
-      <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold">ATENTO IPS</a>
+  <nav class="container mx-auto px-12 md:px-16 py-12">
+    <div class="flex justify-between items-center max-w-7xl mx-auto">
+      <div class="flex items-center py-5">
+        <a href="/" class="flex items-center">
+          <img 
+            src="/images/atento-logo.webp" 
+            alt="ATENTO IPS Logo" 
+            class="h-12 md:h-14 w-auto"
+            width="200"
+            height="50"
+          />
+        </a>
       </div>
 
-      <div class="hidden md:flex space-x-8">
+      <div class="hidden md:flex space-x-12">
         {menuItems.map(item => (
           <a href={item.href} class="nav-link">
             {item.text}
@@ -25,7 +31,6 @@ const menuItems = [
       </div>
 
       <div class="flex items-center space-x-4">
-        <ThemeToggle />
         <button class="md:hidden menu-button">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -48,6 +53,8 @@ const menuItems = [
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
+    font-size: 1.1rem;
+    padding: 1rem 0;
   }
 
   .nav-link::after {
@@ -55,7 +62,7 @@ const menuItems = [
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -4px;
+    bottom: 0.5rem;
     left: 0;
     background-color: currentColor;
     transition: width 0.3s ease;
@@ -67,5 +74,11 @@ const menuItems = [
 
   .menu-button {
     color: var(--header-text);
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 1.5rem;
+    }
   }
 </style> 
